@@ -6,7 +6,7 @@
 <body>
   {%- include header.html -%}
   <div class="container">
-      <div class="content ">
+      <div class="content {% if page.layout == 'post' %}is-post{% endif %}">
         {{ content }}
         
       </div>
@@ -14,8 +14,31 @@
       <div class = "sidebar">
         {%- include sidebar.html -%}
       </div>
-   
   </div>
+
+  <style>
+    /* Style spécifique pour la boîte de contenu quand c'est un article */
+    .is-post {
+        background-color: #d1d1d1 !important;
+        color: #1a1a1a !important;
+        padding: 30px !important;
+        border-radius: 12px !important;
+        margin-top: -50px !important; /* Remonte tout le bloc */
+    }
+
+    /* Force le texte en noir à l'intérieur de l'article */
+    .is-post * {
+        color: #1a1a1a !important;
+    }
+
+    /* Garde le fond du site bien noir */
+    body {
+        background-color: #1a1a1a !important;
+    }
+  </style>
+
+  {%- include footer.html -%}
+  ... (le reste de ton code avec les circles et playerjs)
 
   {%- include footer.html -%}
 
