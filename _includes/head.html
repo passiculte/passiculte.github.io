@@ -138,31 +138,32 @@ header.site-header, .header {
     margin-bottom: 5px !important;
     padding-bottom: 0 !important;
 }
-        /* 10. STYLE DES PAGES D'ARTICLES (VUE COMPLÈTE) */
+      /* 10. STYLE SPÉCIFIQUE POUR LA PAGE DE L'ÉPISODE (SINGLE POST) */
 
-/* On cible le conteneur principal de l'article seul */
-.post-content, .entry-content, article, .post-container {
+/* On cible le conteneur principal de la page article */
+.single-post, .type-post, .post-content {
     background-color: #d1d1d1 !important;
     color: #1a1a1a !important;
     padding: 30px !important;
     border-radius: 12px !important;
-    margin-top: -30px !important; /* Pour remonter aussi ici */
+    margin-top: -40px !important; /* On remonte aussi ici comme sur l'accueil */
 }
 
-/* On force tout le texte à l'intérieur en noir (titres, listes, texte) */
-.post-content *, .entry-content *, article * {
+/* On force tout le texte à l'intérieur en noir */
+.single-post *, .type-post * {
     color: #1a1a1a !important;
 }
 
-/* Correction spécifique pour le lecteur audio sur la page de l'article */
-.post-content audio, .entry-content audio {
-    width: 100% !important;
-    margin-top: 20px !important;
+/* On s'assure que les titres (h1, h2) dans la page sont bien noirs */
+.single-post h1, .single-post h2, .single-post h3 {
+    color: #1a1a1a !important;
+    margin-top: 0 !important;
 }
 
-/* Si le fond de la page entière reste blanc sur les articles */
-.single-post, .post-template-default {
-    background-color: #1a1a1a !important;
-}  
+/* On s'occupe du lecteur audio pour qu'il prenne toute la largeur */
+.single-post audio, .single-post .mejs-container {
+    width: 100% !important;
+    margin: 20px 0 !important;
+}
 </style>
 </head>
