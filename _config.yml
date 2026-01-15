@@ -2,7 +2,7 @@
 title: "Pas si culte"
 description: "Quand le culte devient nanar"
 podcast-description: "Pas si culte décortique les grandes oeuvres du cinéma avec les yeux d'un fan de nanars."
-url:  "https://jekyll-podcaster.netlify.app/" # Actual base url of the website
+url:  "https://passiculte.github.io" # Actual base url of the website
 baseurl: ""                    # url of the jekyll blog. e.g. if you set url to "mysite.com" and baseurl to "blog", the jekyll website will work on "mysite.com/blog"
 author:
   name: "Alessio Franceschi"
