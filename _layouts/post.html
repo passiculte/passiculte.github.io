@@ -3,58 +3,74 @@ layout: default
 ---
 
 <style>
-  /* On force le texte en noir partout à l'intérieur de l'article */
-  .single-post, .single-post p, .single-post h2, .single-post a, .single-post li {
+  /* 1. On cible la div ".content" qui vient du fichier default.html */
+  /* C'est elle qui est blanche par défaut, on la force en gris */
+  .container .content {
+    background-color: #d1d1d1 !important;
+    padding: 30px !important;
+    border-radius: 12px !important;
+    margin-top: -50px !important; /* On remonte tout le bloc blanc */
     color: #1a1a1a !important;
   }
-  /* On s'assure que les liens de catégories restent visibles ou d'une autre couleur */
-  .single-post .categories a {
-    color: #cc0000 !important; 
+
+  /* 2. On force tout le texte à l'intérieur en noir */
+  .container .content, 
+  .container .content p, 
+  .container .content h2, 
+  .container .content h1,
+  .container .content div {
+    color: #1a1a1a !important;
+  }
+
+  /* 3. On s'assure que le fond global du site est bien noir */
+  body {
+    background-color: #1a1a1a !important;
+  }
+
+  /* Style des catégories */
+  .categories a {
+    color: #cc0000 !important;
     font-weight: bold;
+    text-decoration: none;
   }
 </style>
 
-<div class="single-post" style="background-color: #d1d1d1; padding: 30px; border-radius: 12px; margin-top: -50px; color: #1a1a1a;">
-        <div class="categories">
-                {% assign categories = page.categories %}
-                {% for category in categories %}
-                  <a href="{% capture url %}/cat/#{{ category | slugify }}{% endcapture %}
-                  {{ url | absolute_url }}">{{category}}</a>
-                  {% unless forloop.last %}&nbsp;{% endunless %} 
-                {% endfor %}
-        </div>
-        <h2>{{page.title}}</h2>
+<div class="single-post">
+    <div class="categories">
+        {% assign categories = page.categories %}
+        {% for category in categories %}
+          <a href="{{ '/cat/#' | append: (category | slugify) | absolute_url }}">{{category}}</a>
+          {% unless forloop.last %}&nbsp;{% endunless %} 
+        {% endfor %}
+    </div>
+    
+    <h2 style="color: #1a1a1a !important;">{{page.title}}</h2>
 
-        {% if post.cover %}
-                <img src="{{post.cover}}" alt="Podcast Cover">
-        {% else %}
-                <img src="{{ "/assets/img/Podcast_Cover_500.jpg" | absolute_url}}" alt="Podcast Cover">
-        {% endif %}
-        
-        <p><strong>{{page.description}}</strong></p>
+    {% if page.cover %}
+        <img src="{{ page.cover | absolute_url }}" alt="Cover" style="max-width:100%; height:auto; border-radius:8px;">
+    {% else %}
+        <img src="{{ '/assets/img/Podcast_Cover_500.jpg' | absolute_url }}" alt="Cover" style="max-width:100%; height:auto; border-radius:8px;">
+    {% endif %}
+    
+    <p style="margin-top: 20px;"><strong>{{page.description}}</strong></p>
 
-        {% capture file %}
-                {{- page.file -}}
-        {% endcapture %}
-        {% capture title %}
-                {{- page.title -}}
-        {% endcapture %}
+    {% capture file %}{{ page.file }}{% endcapture %}
+    {% capture title %}{{ page.title }}{% endcapture %}
+    {% include player.html file = file title = title %}
 
-        {% include player.html file = file title = title %}
+    {% if page.videoid %}
+        {% include video.html videoid = page.videoid %}
+    {% endif %}
 
-        {% if page.videoid %}
-                {% include video.html videoid = page.videoid %}
-        {% endif %}
+    <div class="entry-content" style="margin-top: 20px;">
+        {{ content }}
+    </div>
 
-        <div class="entry-content">
-            {{ content }}
-        </div>
-
-        {% if site.data.settings.shownotes == true %}
-                {% include shownotes.html %}
-        {% endif %}
+    {% if site.data.settings.shownotes == true %}
+        {% include shownotes.html %}
+    {% endif %}
 </div>
 
 {% if site.settings.disqus-shortname %}
-        {%- include disqus.html -%}
+    {%- include disqus.html -%}
 {% endif %}
