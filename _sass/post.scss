@@ -56,6 +56,24 @@
                     top: 0;
                     width: 100%;
                 }
+                .single-post, .post {
+  background-color: #d1d1d1 !important; // Le gris des vignettes
+  color: #1a1a1a !important;            // Le texte en noir
+  padding: 40px !important;            // Un peu plus d'espace pour la lecture
+  border-radius: 15px !important;
+  margin-top: -50px !important;         // On remonte l'article vers le titre
+  
+  // On s'assure que tous les éléments enfants (titres, paragraphes) sont noirs
+  h1, h2, h3, h4, p, li, span, time {
+    color: #1a1a1a !important;
+  }
+
+  // On ajuste le lecteur audio à l'intérieur
+  audio, .mejs-container {
+    width: 100% !important;
+    margin: 20px 0 !important;
+  }
+}
             }
 
         }
