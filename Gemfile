@@ -7,7 +7,7 @@ gem "github-pages", "~> 231", group: :jekyll_plugins
 group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-sitemap"
-  gem "jekyll-paginate"
+  gem "jekyll-remote-theme" # <--- Ajouté ici pour correspondre à tes plugins
 end
 
 gem "webrick"
