@@ -3,13 +3,22 @@
 
 @import "base", "background", "header", "sidebar", "home", "post", "archive", "player";
 
-/* On force le fond sur tous les éléments structurels du thème */
-html, body, .site-container, .wrapper {
+/* --- CONFIGURATION PAS SI CULTE --- */
+
+/* On cible TOUT : le fond, les articles, le header */
+html, body, #main, .wrapper, .site-header, .site-footer, .site-container {
     background-color: #1a1a1a !important;
-    background-image: none !important; /* Supprime la vague bleue ou toute autre image */
+    background-image: none !important;
+    color: #eeeeee !important;
 }
 
-/* On s'assure que le texte reste lisible sur le noir */
-body {
-    color: #e0e0e0 !important;
+/* On change la couleur des cartes/vignettes d'épisodes en gris clair */
+.entry, .post-preview, .card, article {
+    background-color: #d1d1d1 !important;
+    color: #1a1a1a !important;
+}
+
+/* On s'assure que les liens restent visibles */
+a {
+    color: #ff4444 !important; /* Un rouge "nanar" pour les liens ? */
 }
