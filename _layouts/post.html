@@ -2,7 +2,19 @@
 layout: default
 ---
 
-<div class = "single-post">
+<style>
+  /* On force le texte en noir partout à l'intérieur de l'article */
+  .single-post, .single-post p, .single-post h2, .single-post a, .single-post li {
+    color: #1a1a1a !important;
+  }
+  /* On s'assure que les liens de catégories restent visibles ou d'une autre couleur */
+  .single-post .categories a {
+    color: #cc0000 !important; 
+    font-weight: bold;
+  }
+</style>
+
+<div class="single-post" style="background-color: #d1d1d1; padding: 30px; border-radius: 12px; margin-top: -50px; color: #1a1a1a;">
         <div class="categories">
                 {% assign categories = page.categories %}
                 {% for category in categories %}
@@ -19,7 +31,7 @@ layout: default
                 <img src="{{ "/assets/img/Podcast_Cover_500.jpg" | absolute_url}}" alt="Podcast Cover">
         {% endif %}
         
-        <p>{{page.description}}</p>
+        <p><strong>{{page.description}}</strong></p>
 
         {% capture file %}
                 {{- page.file -}}
@@ -34,14 +46,15 @@ layout: default
                 {% include video.html videoid = page.videoid %}
         {% endif %}
 
-        {{ content }}
+        <div class="entry-content">
+            {{ content }}
+        </div>
 
         {% if site.data.settings.shownotes == true %}
                 {% include shownotes.html %}
         {% endif %}
-
-        
 </div>
+
 {% if site.settings.disqus-shortname %}
         {%- include disqus.html -%}
 {% endif %}
