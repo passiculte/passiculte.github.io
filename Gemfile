@@ -1,14 +1,10 @@
-# frozen_string_literal: true
-
 source "https://rubygems.org"
-gemspec
 
-gem 'jekyll'
+# Cette ligne contient tout ce qu'il faut pour GitHub Pages
+gem "github-pages", group: :jekyll_plugins
 
-gem 'wdm', '>= 0.1.0'
-
-gem 'jekyll-paginate'
-gem 'jekyll-feed'
-gem 'jekyll-seo-tag'
-gem 'jekyll-sitemap'
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# Ajoute ces deux-là qui sont souvent requis par les thèmes de podcast
+group :jekyll_plugins do
+  gem "jekyll-feed"
+  gem "jekyll-sitemap"
+end
