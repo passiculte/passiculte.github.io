@@ -39,14 +39,29 @@
         <!-- End Google Analytics -->
         
         <style>
-  /* Force le mode sombre Pas si culte */
-  html, body, .site-container, .wrapper, #main {
+  /* Fond global du site */
+  html, body, .site-container, .wrapper, #main, .container {
       background-color: #1a1a1a !important;
       background-image: none !important;
       color: #eeeeee !important;
   }
-  .entry, .post-preview, .card {
+
+  /* Ciblage ultra-précis des vignettes (cartes d'épisodes) */
+  .entry, 
+  .post-preview, 
+  .card, 
+  .post-card, 
+  .card-content,
+  article[class*="card"] {
       background-color: #d1d1d1 !important;
+  }
+
+  /* Force la couleur du texte à l'intérieur des vignettes en noir */
+  .entry *, 
+  .post-preview *, 
+  .card *, 
+  .post-card *,
+  .card-content * {
       color: #1a1a1a !important;
   }
 </style>
