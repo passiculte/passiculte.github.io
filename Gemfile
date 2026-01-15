@@ -1,13 +1,13 @@
 source "https://rubygems.org"
 
-# Cette ligne contient tout ce qu'il faut pour GitHub Pages
-gem "github-pages", group: :jekyll_plugins
+# On utilise une version fixe et stable
+gem "github-pages", "231", group: :jekyll_plugins
 
-# Ajoute ces deux-là qui sont souvent requis par les thèmes de podcast
 group :jekyll_plugins do
-  gem "jekyll-feed"
-  gem "jekyll-sitemap"
-  gem "jekyll-paginate"
+  gem "jekyll-feed", "~> 0.15"
+  gem "jekyll-sitemap", "~> 1.4"
+  gem "jekyll-paginate", "~> 1.1"
 end
 
-gem "webrick"
+# Indispensable pour éviter l'erreur de build sur Ruby 3.x
+gem "webrick", "~> 1.7"
