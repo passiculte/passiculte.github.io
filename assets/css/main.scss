@@ -22,3 +22,9 @@ html, body, #main, .wrapper, .site-header, .site-footer, .site-container {
 a {
     color: #ff4444 !important; /* Un rouge "nanar" pour les liens ? */
 }
+/* On force le texte du footer en blanc/gris clair */
+footer, footer p, footer a {
+    color: #ffffff !important; 
+    text-align: center;
+    opacity: 0.8; /* Optionnel : un peu plus discret que le blanc pur */
+}
