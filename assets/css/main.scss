@@ -2,3 +2,17 @@
 ---
 
 @import "base", "background", "header", "sidebar", "home", "post", "archive", "player";
+
+---
+---
+
+/* On force le fond sur tous les éléments structurels du thème */
+html, body, .site-container, .wrapper {
+    background-color: #1a1a1a !important;
+    background-image: none !important; /* Supprime la vague bleue ou toute autre image */
+}
+
+/* On s'assure que le texte reste lisible sur le noir */
+body {
+    color: #e0e0e0 !important;
+}
