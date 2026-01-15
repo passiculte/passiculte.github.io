@@ -1,31 +1,39 @@
-.container{
-    .content{
-        .single-post{
+.container {
+    .content {
+        // C'EST ICI QU'ON APPLIQUE LE GRIS
+        background-color: #d1d1d1 !important; 
+        color: #1a1a1a !important;
+        padding: 40px !important;
+        border-radius: 15px !important;
+        margin-top: -50px !important;
+
+        .single-post {
             padding-bottom: 100px;
-            .categories{
+
+            // On force tout le texte en noir
+            h1, h2, h3, h4, p, li, span, time {
+                color: #1a1a1a !important;
+            }
+
+            .categories {
                 text-align: center;
                 font-size: 1.2rem;
             }
-            img{
+
+            img {
                 max-width: 400px;
                 display: block;
-                margin-left: auto;
-                margin-right: auto;
+                margin: 10px auto 20px auto; // Haut, Droite/Gauche (auto), Bas
                 width: 50%;
-                margin-bottom: 20px;
-                margin-top: 10px;
             }
-            p{
-                font-size: 1.1rem;
-            }
-            h2{
-                text-align: center;
-            }
-            h3{
-                text-align: center;
-                margin-top: 30px;
-            }
-            a{
+
+            p { font-size: 1.1rem; }
+
+            h2, h3 { text-align: center; }
+            h3 { margin-top: 30px; }
+
+            // Liens
+            a {
                 text-decoration: none;
                 color: black;
                 display: inline-block;
@@ -33,49 +41,38 @@
                 border-bottom: 1px solid $base-color;
                 line-height: 0.9;
                 transition: background-color 0.1s cubic-bezier(.33,.66,.66,1);
+                
+                &:hover {
+                    background-color: rgba(1,160,228,0.3);
+                    border-bottom: none;
+                }
             }
-            a:hover{
-                background-color: rgba(1,160,228,0.3);
-                border-bottom: none;
+
+            // Lecteur Audio
+            audio, .mejs-container {
+                width: 100% !important;
+                margin: 20px 0 !important;
             }
-            .video{
+
+            // Vidéo
+            .video {
                 display: block;
-                margin-left: auto;
-                margin-right: auto;
+                margin: 0 auto 30px auto;
                 width: 50%; 
-                margin-bottom: 30px;
                 height: 0;
                 overflow: hidden;
                 padding-bottom: 29.25%;
                 padding-top: 30px;
                 position: relative;
-                iframe, object, embed{
+
+                iframe, object, embed {
                     height: 100%;
                     left: 0;
                     position: absolute;
                     top: 0;
                     width: 100%;
                 }
-                .single-post, .post {
-  background-color: #d1d1d1 !important; // Le gris des vignettes
-  color: #1a1a1a !important;            // Le texte en noir
-  padding: 40px !important;            // Un peu plus d'espace pour la lecture
-  border-radius: 15px !important;
-  margin-top: -50px !important;         // On remonte l'article vers le titre
-  
-  // On s'assure que tous les éléments enfants (titres, paragraphes) sont noirs
-  h1, h2, h3, h4, p, li, span, time {
-    color: #1a1a1a !important;
-  }
-
-  // On ajuste le lecteur audio à l'intérieur
-  audio, .mejs-container {
-    width: 100% !important;
-    margin: 20px 0 !important;
-  }
-}
             }
-
         }
     }
 }
