@@ -138,5 +138,31 @@ header.site-header, .header {
     margin-bottom: 5px !important;
     padding-bottom: 0 !important;
 }
+        /* 10. STYLE DES PAGES D'ARTICLES (VUE COMPLÈTE) */
+
+/* On cible le conteneur principal de l'article seul */
+.post-content, .entry-content, article, .post-container {
+    background-color: #d1d1d1 !important;
+    color: #1a1a1a !important;
+    padding: 30px !important;
+    border-radius: 12px !important;
+    margin-top: -30px !important; /* Pour remonter aussi ici */
+}
+
+/* On force tout le texte à l'intérieur en noir (titres, listes, texte) */
+.post-content *, .entry-content *, article * {
+    color: #1a1a1a !important;
+}
+
+/* Correction spécifique pour le lecteur audio sur la page de l'article */
+.post-content audio, .entry-content audio {
+    width: 100% !important;
+    margin-top: 20px !important;
+}
+
+/* Si le fond de la page entière reste blanc sur les articles */
+.single-post, .post-template-default {
+    background-color: #1a1a1a !important;
+}  
 </style>
 </head>
