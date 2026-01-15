@@ -83,5 +83,23 @@
       margin: 15px 0 0 0 !important;
       width: 100% !important;
   } 
+          /* 5. CORRECTION DÉCALAGE LECTEUR */
+.post audio, 
+.post .audio-player, 
+.post .mejs-container,
+.post .podcast-player {
+    margin-left: 0 !important;   /* Supprime le décalage à gauche */
+    padding-left: 0 !important;  /* Supprime l'espace interne à gauche */
+    width: 100% !important;      /* Force la barre à prendre toute la largeur */
+    max-width: 100% !important;
+    left: 0 !important;          /* Force la position à zéro */
+}
+
+/* Si le lecteur est dans une liste (ul/li), on enlève les puces qui décalent */
+.post ul, .post li {
+    list-style: none !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
 </style>
 </head>
