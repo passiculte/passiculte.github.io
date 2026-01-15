@@ -3,7 +3,7 @@ title: "Pas si culte"
 description: "Quand le culte devient nanar"
 podcast-description: "Pas si culte décortique les grandes oeuvres du cinéma avec les yeux d'un fan de nanars."
 url:  "https://jekyll-podcaster.netlify.app/" # Actual base url of the website
-baseurl: "/"                    # url of the jekyll blog. e.g. if you set url to "mysite.com" and baseurl to "blog", the jekyll website will work on "mysite.com/blog"
+baseurl: ""                    # url of the jekyll blog. e.g. if you set url to "mysite.com" and baseurl to "blog", the jekyll website will work on "mysite.com/blog"
 author:
   name: "Alessio Franceschi"
   email: "alessiofranceschi2@gmail.com"
@@ -16,13 +16,15 @@ keywords: [podcast, jekyll]
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-remote-theme # Important si tu utilises un thème distant
-
+  - jekyll-paginate
 #exclude: [_podcast.rss] #Ignore this, it will be used in case I decide to add rss feed
 
 #Pagination
 paginate: 5
 paginate_path: "/page-:num/"
+
+# Langue (À AJOUTER ICI)
+lang: fr
 
 #Sass
 sass:
@@ -35,7 +37,7 @@ twitter:
   card: summary
 facebook:
   app_id: 
-logo: /assets/img/Podcast_Cover.png
+logo: /assets/img/logopassiculte.png
 social:
   name: Alessio Franceschi
   links:
