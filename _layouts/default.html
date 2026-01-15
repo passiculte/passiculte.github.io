@@ -45,6 +45,16 @@
     margin-top: 0 !important;
     padding-top: 10px !important;
 }
+    /* Cache le titre et le menu mais les laisse lisibles pour Google */
+.site-header, .nav, .site-title, header {
+    display: none !important;
+}
+
+/* Remonte tout le site pour ne pas avoir de trou noir en haut */
+.site-body, .container, .wrapper {
+    margin-top: 0 !important;
+    padding-top: 10px !important;
+}
   </style>
 
   {%- include footer.html -%}
