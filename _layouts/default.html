@@ -45,9 +45,13 @@
     margin-top: 0 !important;
     padding-top: 10px !important;
 }
-    /* Cache le titre et le menu mais les laisse lisibles pour Google */
-.site-header, .nav, .site-title, header {
+   /* On cible absolument tout ce qui ressemble à un header ou un titre */
+header, .site-header, #header, .nav, #nav, .site-title, #site-title, .navigation, #navigation {
     display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 /* Remonte tout le site pour ne pas avoir de trou noir en haut */
