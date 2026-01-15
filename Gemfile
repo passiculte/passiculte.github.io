@@ -1,13 +1,14 @@
 source "https://rubygems.org"
 
-# On utilise une version fixe et stable
-gem "github-pages", "231", group: :jekyll_plugins
+# Le pack "officiel" GitHub Pages qui évite les conflits de versions
+gem "github-pages", group: :jekyll_plugins
 
+# On liste les plugins essentiels pour ton thème
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.15"
-  gem "jekyll-sitemap", "~> 1.4"
-  gem "jekyll-paginate", "~> 1.1"
+  gem "jekyll-feed"
+  gem "jekyll-sitemap"
+  gem "jekyll-paginate"
 end
 
-# Indispensable pour éviter l'erreur de build sur Ruby 3.x
-gem "webrick", "~> 1.7"
+# Indispensable pour les nouvelles versions de Ruby
+gem "webrick"
