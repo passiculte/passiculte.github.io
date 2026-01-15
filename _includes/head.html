@@ -115,5 +115,28 @@
 .sidebar a:hover {
     color: #ff4444 !important;
 }
+          /* 8. REMONTER LE CONTENU (SIDEBAR ET ARTICLES) */
+
+/* On réduit l'espace en haut de la zone principale */
+.main-content, #main, .container {
+    padding-top: 10px !important;
+    margin-top: 0 !important;
+}
+
+/* On remonte spécifiquement la sidebar */
+.sidebar, .side-bar, aside {
+    margin-top: -20px !important; /* Une marge négative force la remontée */
+}
+
+/* On remonte le premier article pour qu'il colle plus au titre/menu */
+.post:first-of-type {
+    margin-top: 0 !important;
+}
+
+/* On réduit l'espace sous le header (le titre du site) */
+header.site-header, .header {
+    margin-bottom: 5px !important;
+    padding-bottom: 0 !important;
+}
 </style>
 </head>
