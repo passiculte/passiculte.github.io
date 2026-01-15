@@ -67,5 +67,21 @@
   .post a:hover {
       color: #ff4444 !important; /* Un petit rouge quand on passe la souris */
   }
+         /* 5. FIX DU LECTEUR AUDIO */
+  /* On s'assure que le player utilise toute la largeur et ignore le padding du parent si besoin */
+  .post audio, 
+  .post .audio-player, 
+  .post .mejs-container {
+      width: 100% !important;
+      margin: 10px 0 !important;
+      display: block !important;
+  }
+
+  /* Si le thème utilise une structure spécifique pour le player de podcast */
+  .podcast-player, .player-wrapper {
+      padding: 0 !important;
+      margin: 15px 0 0 0 !important;
+      width: 100% !important;
+  } 
 </style>
 </head>
